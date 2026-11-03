@@ -1,0 +1,37 @@
+﻿@model List<ANDtr.Models.Product>
+@{
+    ViewData["Title"] = "Products";
+}
+
+<h1>Products</h1>
+
+@if (Model.Count == 0)
+{
+    <p class="text-muted">No products in the database yet.</p>
+}
+else
+{
+    <table class="table table-striped table-hover">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Code name</th>
+            <th>Reg. number</th>
+            <th>Recall number</th>
+            <th>Trade name</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var p in Model)
+        {
+            <tr>
+                <td>@p.Name</td>
+                <td>@p.CodeName</td>
+                <td>@p.RegNum</td>
+                <td>@p.RecallNum</td>
+                <td>@p.TradeName</td>
+            </tr>
+        }
+        </tbody>
+    </table>
+}
